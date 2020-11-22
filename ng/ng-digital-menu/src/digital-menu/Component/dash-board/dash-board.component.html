@@ -1,0 +1,41 @@
+<div  *ngIf="IsDataLoaded && menu[0]">
+    <h1></h1>
+    <div class="col-auto mb-3">
+        <h1 class="my-4">{{menu[0].Name}}</h1>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-auto mb-3" *ngFor="let dish of menu[0].Dishes">
+                <div class="card" style="width: 18rem;">
+                    <div >
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">{{dish.Name}}</a>
+                            </h4>
+                            
+                            <div class="card-subtitle mb-2 text-muted" *ngIf="dish.PreparationTime"> Preparation Time - {{dish.PreparationTime}} Minutes</div>
+                            <p class="card-text">{{dish.ShortDescription}}</p>
+                            <div *ngIf="dish.Price"> €{{dish.Price}}</div>
+                            <div *ngIf="dish.Prices" >
+                                <div *ngFor="let price of dish.Prices"  >
+                                    {{price.Size }} : €{{price.Price}}
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+    </div>
+</div>

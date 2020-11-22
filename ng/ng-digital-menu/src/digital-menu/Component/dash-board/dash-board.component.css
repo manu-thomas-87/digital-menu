@@ -1,0 +1,6 @@
+body .space {
+    min-height: 100px;
+}
+.col-lg-9 {
+    max-width: 250px;
+}
