@@ -11,7 +11,7 @@ namespace DigitalMenu.Web.API.Services.Services.Interfaces
 
         Menu GetMenu(Guid id, string locale);
 
-        void DeleteMenu(Guid id);
+        bool DeleteMenu(Guid id);
 
         void CreateMenu(Menu menu);
 
@@ -19,7 +19,7 @@ namespace DigitalMenu.Web.API.Services.Services.Interfaces
 
         bool InsertDishes(Guid id, Dish dish);
         bool UpdateDishes(Guid menuId, Guid dishId, Dish dish);
-        void DeleteDish( Guid id, Guid dishId);
+        bool DeleteDish( Guid id, Guid dishId);
 
     }
 }

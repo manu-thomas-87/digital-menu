@@ -19,6 +19,11 @@ namespace DigitalMenu.Web.API.Controllers
         // GET: api/Menu
         public IHttpActionResult Get()
         {
+            var lstMenu = menuService.GetAllMenu();
+            if (lstMenu.Count < 1)
+            {
+                return NotFound();
+            }
             return Content(HttpStatusCode.OK, menuService.GetAllMenu());
         }
 
@@ -26,6 +31,10 @@ namespace DigitalMenu.Web.API.Controllers
         public IHttpActionResult Get(Guid id, string locale)
         {
             var menu = menuService.GetMenu(id, locale);
+            if(menu==null)
+            {
+                return NotFound();
+            }
             return Content(HttpStatusCode.OK, menuService.GetMenu(id, locale));
         }
 
@@ -39,41 +48,66 @@ namespace DigitalMenu.Web.API.Controllers
 
         // PUT: api/Menu/{id}
         [ValidateModel]
-        public void Put(Guid id, [FromBody] Menu menu)
+        public IHttpActionResult Put(Guid id, [FromBody] Menu menu)
         {
           bool bSuccess =   menuService.UpdateMenu(menu, id);
+            if (!bSuccess)
+            {
+                return Content(HttpStatusCode.BadRequest, $"Menu {id} is not found");
+            }
+            return Ok();
         }
 
 
         // DELETE: api/Menu/{id}
-        public void Delete(Guid id)
+        public IHttpActionResult Delete(Guid id)
         {
-            menuService.DeleteMenu(id);
+            bool bSuccess = menuService.DeleteMenu(id);
+            if (!bSuccess)
+            {
+                return Content(HttpStatusCode.BadRequest, $"Menu {id} is not found");
+            }
+            return Ok();
         }
 
         #region dish
         [HttpPut]
         [ValidateModel]
         [Route("api/Menu/{id}/dish/{dishId}")]
-        public void Put(Guid id, Guid dishId, [FromBody] Dish dish)
+        public IHttpActionResult Put(Guid id, Guid dishId, [FromBody] Dish dish)
         {
-            menuService.UpdateDishes(id, dishId, dish);
+            bool bSuccess = menuService.UpdateDishes(id, dishId, dish);
+            if (!bSuccess)
+            {
+                return Content(HttpStatusCode.BadRequest, $"Menu {id} and dish {dishId} is not found");
+            }
+            return Ok();
         }
 
         [HttpPost]
         [ValidateModel]
         [Route("api/Menu/{id}/dish")]
-        public void Post(Guid id, [FromBody] Dish dish)
+        public IHttpActionResult Post(Guid id, [FromBody] Dish dish)
         {
-            menuService.InsertDishes(id, dish);
+            bool bSuccess = menuService.InsertDishes(id, dish);
+            if (!bSuccess)
+            {
+                return Content(HttpStatusCode.BadRequest, $"Menu {id} is not found");
+            }
+            return Ok();
         }
 
         [HttpDelete]
         [ValidateModel]
         [Route("api/Menu/{id}/dish/{dishId}")]
-        public void Put(Guid id, Guid dishId)
+        public IHttpActionResult Delete(Guid id, Guid dishId)
         {
-            menuService.DeleteDish(id, dishId);
+          bool bSuccess=   menuService.DeleteDish(id, dishId);
+            if (!bSuccess)
+            {
+                return Content(HttpStatusCode.BadRequest, $"Menu {id} and dish {dishId} is not found");
+            }
+            return Ok();
         }
         #endregion
     }
