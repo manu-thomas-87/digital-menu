@@ -8,17 +8,14 @@ import { MenuService } from '../../Service/menu.service';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor(private menuService :MenuService) { }
-public menu:any;
-public  IsDataLoaded:boolean
+  constructor(private menuService: MenuService) { }
+  public menu: any;
+  public IsDataLoaded: boolean
 
   ngOnInit(): void {
-
-  const sub=  this.menuService.GetMenu().subscribe(res=>{
-    this.menu =res;
-    this.IsDataLoaded= true;
-   
-  });
+    const sub = this.menuService.GetMenu().subscribe(res => {
+      this.menu = res;
+      this.IsDataLoaded = true;
+    });
   }
-
 }

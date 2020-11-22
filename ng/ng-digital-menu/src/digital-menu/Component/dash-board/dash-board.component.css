@@ -4,3 +4,6 @@ body .space {
 .col-lg-9 {
     max-width: 250px;
 }
+.no-data{
+    padding: 10px;
+}
