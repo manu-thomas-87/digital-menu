@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalMenu.Common\DigitalMenu.Common.csproj" />
+    <ProjectReference Include="..\DigitalMenu.DB.Helper\DigitalMenu.DB.Helper.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,44 @@
+{
+  "Name": "Menu 1",
+  "IsPublished": true,
+  "locale": "en",
+  "id": "ObjectId(\"507f1f77bcf86cd799439011\")",
+  "Dishes": [
+    {
+      "id": "ObjectId(\"507f1f77bcf86cd799439011\")",
+      "name": "Hot and sour chicken soup",
+      "shortDescription": "Hot and sour soup is a soup from Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
+      "image": "Sample imgae",
+      "price": 45,
+      "ingredientsAndWarinng": "Sesame oil,corn starch, vinegar,mashrooms, chicken ",
+      "preparationTime": 10,
+      "tags": [ "soup", "chicken", "chinees", "asian" ],
+      "cuisine": "chinees",
+      "catagory": "starter",
+      "timeOfTheday": [ "dinner" ],
+      "dayOfTheWeek": "All Week",
+      "isSoldOut": false,
+      "isDeleted": false,
+      "calories": 150 //calories per 100g
+    },
+    {
+      "id": "ObjectId(\"707d1f77bcf86cd799439011\")",
+      "name": "Margherita pizza",
+      "shortDescription": "A classic delight with 100% Real mozzarella cheese",
+      "image": "Sample imgae 2",
+      "prices": {
+        "medium": 18,
+        "large": 25
+      },
+      "ingredientsAndWarinng": "Crust: rice flour, water, corn starch, tapioca dextrin, non-fatty dry milk, whole eggs, sugar, salt, xanthan gum, baking powder, soybean oil, yeast. Topping: tomato sauce (chopped tomatoes, crushed tomatoes, onions, garlic, canola oil, tomato paste, butter, parsley, basil, sugar, salt)",
+      "preparationTime": 10,
+      "tags": [ "pizza", "chicken", "margherita", "italian" ],
+      "cuisine": "italian",
+      "catagory": "main course",
+      "timeOfTheday": [ "dinner", "lunch" ],
+      "dayOfTheWeek": "All Week",
+      "isSoldOut": false,
+      "isDeleted": false
+    }
+  ]
+}
