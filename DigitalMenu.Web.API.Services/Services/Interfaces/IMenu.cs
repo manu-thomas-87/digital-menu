@@ -9,7 +9,7 @@ namespace DigitalMenu.Web.API.Services.Services.Interfaces
     {
         List<Menu> GetAllMenu();
 
-        Menu GetMenu(Guid id, string locale);
+        Menu GetMenu(string name, string locale);
 
         bool DeleteMenu(Guid id);
 

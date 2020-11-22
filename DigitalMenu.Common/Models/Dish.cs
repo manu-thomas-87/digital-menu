@@ -35,7 +35,7 @@ namespace DigitalMenu.Common.Models
         /// <summary>
         /// Price of the dish to serve
         /// </summary>
-        public int? Price { get; set; }
+        public Double? Price { get; set; }
 
         /// <summary>
         /// Price of the dish if item is avaiable in differet quqntity ie, Medium, Large..

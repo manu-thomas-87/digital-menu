@@ -33,10 +33,10 @@ namespace DigitalMenu.DB.Helper
         /// <param name="id">Menu item id</param>
         /// <param name="locale">Locale of the menu</param>
         /// <returns>Single menu item</returns>
-        public Menu GetMenuByIdAndLocale(Guid id, string locale)
+        public Menu GetMenuByNameAndLocale(string name, string locale)
         {
             var collection = db.GetCollection<Menu>(menuCollection);
-            var filter = Builders<Menu>.Filter.Eq("_id", id) & Builders<Menu>.Filter.Eq("Locale", locale);
+            var filter = Builders<Menu>.Filter.Eq("Name", name) & Builders<Menu>.Filter.Eq("Locale", locale);
             return collection.Find(filter).FirstOrDefault();
         }
         /// <summary>
@@ -54,10 +54,10 @@ namespace DigitalMenu.DB.Helper
         /// </summary>
         /// <param name="menuName">Menu item name</param>
         /// <returns>True if menu is available else false</returns>
-        public bool MenuExists(string menuName)
+        public bool MenuExists(string menuName,string locale)
         {
             var collection = db.GetCollection<Menu>(menuCollection);
-            var filter = Builders<Menu>.Filter.Eq("Name", menuName);
+            var filter = Builders<Menu>.Filter.Eq("Name", menuName) & Builders<Menu>.Filter.Eq("Locale", locale);
             return collection.Find(filter).SingleOrDefault() != null ? true : false;
         }
 

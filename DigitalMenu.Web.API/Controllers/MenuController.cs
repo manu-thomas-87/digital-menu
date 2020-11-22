@@ -17,6 +17,8 @@ namespace DigitalMenu.Web.API.Controllers
             menuService = service;
         }
         // GET: api/Menu
+        [HttpGet]
+        [Route("api/Menu")]
         public IHttpActionResult Get()
         {
             var lstMenu = menuService.GetAllMenu();
@@ -28,14 +30,16 @@ namespace DigitalMenu.Web.API.Controllers
         }
 
         // GET:  api/Menu/{id}?locale={locale}
-        public IHttpActionResult Get(Guid id, string locale)
+        [HttpGet]
+        [Route("api/Menu")]
+        public IHttpActionResult Get(string name, string locale)
         {
-            var menu = menuService.GetMenu(id, locale);
+            var menu = menuService.GetMenu(name, locale);
             if(menu==null)
             {
                 return NotFound();
             }
-            return Content(HttpStatusCode.OK, menuService.GetMenu(id, locale));
+            return Content(HttpStatusCode.OK, menu);
         }
 
         // POST: api/Menu

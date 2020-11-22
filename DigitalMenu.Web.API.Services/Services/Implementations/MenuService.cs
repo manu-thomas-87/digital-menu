@@ -13,9 +13,9 @@ namespace DigitalMenu.Web.API.Services.Services.Implementations
         private MongoDBHelper db = new MongoDBHelper("Menu");
         public void CreateMenu(Menu menu)
         {
-            if (db.MenuExists(menu.Name))
+            if (db.MenuExists(menu.Name,menu.Locale))
             {
-                throw new Exception($"Menu({menu.Name}) already exists ");
+                throw new Exception($"Menu '{menu.Name}' already exists for the locale '{menu.Locale}' ");
             }
 
             _UpdateDishReferenceId(menu);
@@ -40,9 +40,9 @@ namespace DigitalMenu.Web.API.Services.Services.Implementations
           return  db.DeleteMenu(id);
         }
 
-        public Menu GetMenu(Guid id, string locale)
+        public Menu GetMenu(string name, string locale)
         {
-            return db.GetMenuByIdAndLocale(id, locale);
+            return db.GetMenuByNameAndLocale(name, locale);
         }
 
         public List<Menu> GetAllMenu()
@@ -58,7 +58,8 @@ namespace DigitalMenu.Web.API.Services.Services.Implementations
 
         public bool UpdateDishes(Guid id, Guid dishId, Dish dish)
         {
-           return db.UpdateDishes(id, dishId, dish);
+            _GenerateId(dish);
+            return db.UpdateDishes(id, dishId, dish);
         }
 
         public bool UpdateMenu(Menu menu, Guid id)

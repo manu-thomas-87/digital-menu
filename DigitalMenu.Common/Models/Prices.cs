@@ -10,6 +10,6 @@ namespace DigitalMenu.Common.Models
         [Required]
         public string Size { get; set; }
         [Required]
-        public int Price { get; set; }
+        public double Price { get; set; }
     }
 }
