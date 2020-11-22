@@ -54,10 +54,10 @@ namespace DigitalMenu.Web.API.Controllers
         #region dish
         [HttpPut]
         [ValidateModel]
-        [Route("api/Menu/{id}/dish/{dishUniqueName}")]
-        public void Put(Guid id, string dishUniqueName, [FromBody] Dish dish)
+        [Route("api/Menu/{id}/dish/{dishId}")]
+        public void Put(Guid id, Guid dishId, [FromBody] Dish dish)
         {
-            menuService.UpdateDishes(id, dishUniqueName, dish);
+            menuService.UpdateDishes(id, dishId, dish);
         }
 
         [HttpPost]
@@ -70,10 +70,10 @@ namespace DigitalMenu.Web.API.Controllers
 
         [HttpDelete]
         [ValidateModel]
-        [Route("api/Menu/{id}/dish/{dishUniqueName}")]
-        public void Put(Guid id, string dishUniqueName)
+        [Route("api/Menu/{id}/dish/{dishId}")]
+        public void Put(Guid id, Guid dishId)
         {
-            menuService.DeleteDish(id, dishUniqueName);
+            menuService.DeleteDish(id, dishId);
         }
         #endregion
     }

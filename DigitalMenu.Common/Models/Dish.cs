@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,8 +11,7 @@ namespace DigitalMenu.Common.Models
    public class Dish
     {
         [BsonId]
-        [Required]
-        public string UniqueName { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         public string Name { get; set; }

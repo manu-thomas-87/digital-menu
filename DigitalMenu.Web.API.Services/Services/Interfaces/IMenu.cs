@@ -18,8 +18,8 @@ namespace DigitalMenu.Web.API.Services.Services.Interfaces
         bool UpdateMenu(Menu menu, Guid id);
 
         bool InsertDishes(Guid id, Dish dish);
-        bool UpdateDishes(Guid menuId,string dishId, Dish dish);
-        void DeleteDish( Guid id, string name);
+        bool UpdateDishes(Guid menuId, Guid dishId, Dish dish);
+        void DeleteDish( Guid id, Guid dishId);
 
     }
 }

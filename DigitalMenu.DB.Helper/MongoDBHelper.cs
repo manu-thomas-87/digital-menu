@@ -66,12 +66,12 @@ namespace DigitalMenu.DB.Helper
             return true;
         }
 
-        public bool UpdateDishes(Guid id, string dishUniqueName, Dish dishItem)
+        public bool UpdateDishes(Guid id, Guid dishId, Dish dishItem)
         {
             var collection = db.GetCollection<Menu>(menuCollection);
             var menuFilter = Builders<Menu>.Filter;
 
-            var dishFilter = menuFilter.And(menuFilter.Eq(x => x.Id, id), menuFilter.ElemMatch(x => x.Dishes, c => c.UniqueName == dishUniqueName));
+            var dishFilter = menuFilter.And(menuFilter.Eq(x => x.Id, id), menuFilter.ElemMatch(x => x.Dishes, c => c.Id == dishId));
             var dishItemReplace = collection.Find(dishFilter).SingleOrDefault();
 
             var update = Builders<Menu>.Update;
@@ -79,23 +79,13 @@ namespace DigitalMenu.DB.Helper
             collection.UpdateOne(dishFilter, courseLevelSetter);
             return true;
         }
-        public void DeleteDish(string dishUniqueName, Guid id)
+        public void DeleteDish(Guid dishId, Guid id)
         {
-            //var collection = db.GetCollection<Menu>(menuCollection);
-            //var menuFilter = Builders<Menu>.Filter;
-            //var dishFilter = menuFilter.And(menuFilter.Eq(x => x.Id, id), menuFilter.ElemMatch(x => x.Dishes, c => c.UniqueName == dishUniqueName));
-
-            //var update = Builders<Menu>.Update;
-            //var courseLevelSetter = update.PullFilter("Dishes.$", dishItem);
-
-            //collection.DeleteOne(dishFilter);
-
-
             var collection = db.GetCollection<Menu>(menuCollection);
             var filter = Builders<Menu>.Filter.AnyEq("_id", id);
 
             var update = Builders<Menu>.Update.PullFilter("Dishes",
-                Builders<Dish>.Filter.Eq("UniqueName", dishUniqueName));
+                Builders<Dish>.Filter.AnyEq("_id", dishId));
             var result = collection.FindOneAndUpdate(filter, update);
         }
     }
