@@ -1,44 +1,298 @@
-{
-  "Name": "Menu 1",
-  "IsPublished": true,
-  "locale": "en",
-  "id": "ObjectId(\"507f1f77bcf86cd799439011\")",
-  "Dishes": [
-    {
-      "id": "ObjectId(\"507f1f77bcf86cd799439011\")",
-      "name": "Hot and sour chicken soup",
-      "shortDescription": "Hot and sour soup is a soup from Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
-      "image": "Sample imgae",
-      "price": 45,
-      "ingredientsAndWarinng": "Sesame oil,corn starch, vinegar,mashrooms, chicken ",
-      "preparationTime": 10,
-      "tags": [ "soup", "chicken", "chinees", "asian" ],
-      "cuisine": "chinees",
-      "catagory": "starter",
-      "timeOfTheday": [ "dinner" ],
-      "dayOfTheWeek": "All Week",
-      "isSoldOut": false,
-      "isDeleted": false,
-      "calories": 150 //calories per 100g
-    },
-    {
-      "id": "ObjectId(\"707d1f77bcf86cd799439011\")",
-      "name": "Margherita pizza",
-      "shortDescription": "A classic delight with 100% Real mozzarella cheese",
-      "image": "Sample imgae 2",
-      "prices": {
-        "medium": 18,
-        "large": 25
+[
+  {
+    "Id": "07768366-27dc-44ed-84cd-9f129a1263a0",
+    "Name": "Vintage Restaurant",
+    "IsPublished": true,
+    "Locale": "en",
+    "Dishes": [
+      {
+        "Id": "9e203df8-50dd-4567-8d83-c133faff4eb2",
+        "Name": "Hot and sour chicken soup",
+        "ShortDescription": "Hot and sour soup is a soup from Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
+        "ContentImage": null,
+        "Price": 7.99,
+        "Prices": null,
+        "IngredientsAndWarinng": "Sesame oil,corn starch, vinegar,mashrooms, chicken ",
+        "PreparationTime": 10,
+        "Tags": [
+          "soup",
+          "chicken",
+          "chinees",
+          "asian"
+        ],
+        "Cuisine": "Chinees",
+        "Catagory": "Starter",
+        "Availablility": [
+          "Dinner",
+          "Lunch"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 150
       },
-      "ingredientsAndWarinng": "Crust: rice flour, water, corn starch, tapioca dextrin, non-fatty dry milk, whole eggs, sugar, salt, xanthan gum, baking powder, soybean oil, yeast. Topping: tomato sauce (chopped tomatoes, crushed tomatoes, onions, garlic, canola oil, tomato paste, butter, parsley, basil, sugar, salt)",
-      "preparationTime": 10,
-      "tags": [ "pizza", "chicken", "margherita", "italian" ],
-      "cuisine": "italian",
-      "catagory": "main course",
-      "timeOfTheday": [ "dinner", "lunch" ],
-      "dayOfTheWeek": "All Week",
-      "isSoldOut": false,
-      "isDeleted": false
-    }
-  ]
-}
+      {
+        "Id": "70de52eb-a1b5-486f-a992-b57d2d32ab5e",
+        "Name": "Fried Poratos",
+        "ShortDescription": "Cooked potatoes fried with lemon and onion, seasoned with salt,pepper",
+        "ContentImage": null,
+        "Price": 8.7,
+        "Prices": null,
+        "IngredientsAndWarinng": "Potato, lemon, onion,pepper",
+        "PreparationTime": 15,
+        "Tags": [
+          "fried",
+          "potato",
+          "french fries"
+        ],
+        "Cuisine": "French",
+        "Catagory": "Starter",
+        "Availablility": [
+          "Dinner",
+          "Weekdays"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 200
+      },
+      {
+        "Id": "b43dfd3a-d146-45a2-9a68-dc9e99ff58ea",
+        "Name": "Black forest",
+        "ShortDescription": "Beautiful Black Forest Cake covered in whipped cream and chocolate. This two layer chocolate cake is coated in a sweet cherry syrup, whipped cream, grated chocolate and fresh cherries. ",
+        "ContentImage": null,
+        "Price": null,
+        "Prices": [
+          {
+            "Size": "Medium",
+            "Price": 6.5
+          },
+          {
+            "Size": "Large",
+            "Price": 13.5
+          }
+        ],
+        "IngredientsAndWarinng": "Egg is added in the cake",
+        "PreparationTime": 3,
+        "Tags": [
+          "cake",
+          "black forest",
+          "chocolate"
+        ],
+        "Cuisine": null,
+        "Catagory": "Desserts",
+        "Availablility": [
+          "Dinner",
+          "Lunch",
+          "Weekends"
+        ],
+        "IsSoldOut": true,
+        "IsDeleted": false,
+        "Calories": 175
+      },
+      {
+        "Id": "bcc0c455-5916-4ac8-8be3-8ac340dc8eb4",
+        "Name": "Italian Salad",
+        "ShortDescription": "Italian Salad is fresh and filled with crisp lettuce, ripe juicy tomatoes, olives, onions and of course zesty pepperoncinis. We add in a simple homemade Italian vinaigrette for the perfect crisp Italian salad",
+        "ContentImage": null,
+        "Price": 9.56,
+        "Prices": null,
+        "IngredientsAndWarinng": null,
+        "PreparationTime": 10,
+        "Tags": [
+          "Salad",
+          "Diet",
+          "Health",
+          "Italian",
+          "Tomatoes"
+        ],
+        "Cuisine": null,
+        "Catagory": "Desserts",
+        "Availablility": [
+          "Dinner",
+          "Breakfast",
+          "Weekends"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 50
+      }
+    ]
+  },
+  {
+    "Id": "ebf4a7fd-fae1-43e1-ada4-fcc7a6720e46",
+    "Name": "Vintage Restaurant",
+    "IsPublished": false,
+    "Locale": "fr",
+    "Dishes": [
+      {
+        "Id": "96edadb0-80ae-4473-be26-4a7751b2a842",
+        "Name": "Hot and sour chicken soup",
+        "ShortDescription": "Hot and sour soup is a soup from Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
+        "ContentImage": null,
+        "Price": 1.0,
+        "Prices": null,
+        "IngredientsAndWarinng": "Sesame oil,corn starch, vinegar,mashrooms, chicken ",
+        "PreparationTime": 11,
+        "Tags": [
+          "soup",
+          "chicken",
+          "chinees",
+          "asian"
+        ],
+        "Cuisine": "Chinees",
+        "Catagory": "Starter",
+        "Availablility": [
+          "Dinner",
+          "Lunch"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 150
+      },
+      {
+        "Id": "1fcb6961-6efc-499b-bb7b-1fadd7020e36",
+        "Name": "Italian Salad",
+        "ShortDescription": "Italian Salad is fresh and filled with crisp lettuce, ripe juicy tomatoes, olives, onions and of course zesty pepperoncinis. We add in a simple homemade Italian vinaigrette for the perfect crisp Italian salad",
+        "ContentImage": null,
+        "Price": 9.56,
+        "Prices": null,
+        "IngredientsAndWarinng": null,
+        "PreparationTime": 10,
+        "Tags": [
+          "Salad",
+          "Diet",
+          "Health",
+          "Italian",
+          "Tomatoes"
+        ],
+        "Cuisine": null,
+        "Catagory": "Desserts",
+        "Availablility": [
+          "Dinner",
+          "Breakfast",
+          "Weekends"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 50
+      }
+    ]
+  },
+  {
+    "Id": "fd4da767-4919-4fa7-a406-4ef702ae0fa9",
+    "Name": "Vintage Restaurant",
+    "IsPublished": true,
+    "Locale": null,
+    "Dishes": [
+      {
+        "Id": "c27ce336-86a8-4f8a-a07d-e57d314856dc",
+        "Name": "Hot and sour chicken soup",
+        "ShortDescription": "Hot and sour soup is a soup from Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
+        "ContentImage": null,
+        "Price": 7.99,
+        "Prices": null,
+        "IngredientsAndWarinng": "Sesame oil,corn starch, vinegar,mashrooms, chicken ",
+        "PreparationTime": 10,
+        "Tags": [
+          "soup",
+          "chicken",
+          "chinees",
+          "asian"
+        ],
+        "Cuisine": "Chinees",
+        "Catagory": "Starter",
+        "Availablility": [
+          "Dinner",
+          "Lunch"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 150
+      },
+      {
+        "Id": "08355a36-772b-4f60-bd18-7a4a84457cda",
+        "Name": "Fried Poratos",
+        "ShortDescription": "Cooked potatoes fried with lemon and onion, seasoned with salt,pepper",
+        "ContentImage": null,
+        "Price": 8.7,
+        "Prices": null,
+        "IngredientsAndWarinng": "Potato, lemon, onion,pepper",
+        "PreparationTime": 15,
+        "Tags": [
+          "fried",
+          "potato",
+          "french fries"
+        ],
+        "Cuisine": "French",
+        "Catagory": "Starter",
+        "Availablility": [
+          "Dinner",
+          "Weekdays"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 200
+      },
+      {
+        "Id": "75f60fb1-2829-46a8-a880-da102817d1a5",
+        "Name": "Black forest",
+        "ShortDescription": "Beautiful Black Forest Cake covered in whipped cream and chocolate. This two layer chocolate cake is coated in a sweet cherry syrup, whipped cream, grated chocolate and fresh cherries. ",
+        "ContentImage": null,
+        "Price": null,
+        "Prices": [
+          {
+            "Size": "Medium",
+            "Price": 6.5
+          },
+          {
+            "Size": "Large",
+            "Price": 13.5
+          }
+        ],
+        "IngredientsAndWarinng": "Egg is added in the cake",
+        "PreparationTime": 3,
+        "Tags": [
+          "cake",
+          "black forest",
+          "chocolate"
+        ],
+        "Cuisine": null,
+        "Catagory": "Desserts",
+        "Availablility": [
+          "Dinner",
+          "Lunch",
+          "Weekends"
+        ],
+        "IsSoldOut": true,
+        "IsDeleted": false,
+        "Calories": 175
+      },
+      {
+        "Id": "e0225019-a22e-477d-bc81-127a7558b445",
+        "Name": "Italian Salad",
+        "ShortDescription": "Italian Salad is fresh and filled with crisp lettuce, ripe juicy tomatoes, olives, onions and of course zesty pepperoncinis. We add in a simple homemade Italian vinaigrette for the perfect crisp Italian salad",
+        "ContentImage": null,
+        "Price": 9.56,
+        "Prices": null,
+        "IngredientsAndWarinng": null,
+        "PreparationTime": 10,
+        "Tags": [
+          "Salad",
+          "Diet",
+          "Health",
+          "Italian",
+          "Tomatoes"
+        ],
+        "Cuisine": null,
+        "Catagory": "Desserts",
+        "Availablility": [
+          "Dinner",
+          "Breakfast",
+          "Weekends"
+        ],
+        "IsSoldOut": false,
+        "IsDeleted": false,
+        "Calories": 50
+      }
+    ]
+  }
+]

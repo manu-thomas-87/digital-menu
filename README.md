@@ -1,7 +1,7 @@
 ## Digital Menu
 
 ### Projects 
-- ASP .NET Web API - REST API to handle the required CURD operations of the digital menu end points. 
+- ASP .NET Web API - REST API to handle the required CRUD operations of the digital menu end points. 
 - Angular Web App - It will show the digital menu details which serverd from the Web API.
 
 ### Configuration 
